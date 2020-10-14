@@ -1,0 +1,62 @@
+html {
+    background-color: yellow;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 100%;
+    width: 650px;
+    margin: auto;
+    border: 10px double blue;
+    background-color: white;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    border-top: 2px solid blue;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 90%;
+    font-weight: bold;
+    text-align: center;
+}
+
+h1 {
+    font-size: 150%;
+    color: blue;
+}
+
+h2 {
+    font-size: 125%;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 110%;
+}
+
+blockquote {
+    margin-left: 0px;
+}
+
+ul {
+    padding-left: 20px;
+}
+
+cite {
+    color: blue;
+    font-style: normal;
+}
+
+.from {
+    text-align: right;
+}
+
+img {
+    float: left;
+    margin-right: 20px;
+}
