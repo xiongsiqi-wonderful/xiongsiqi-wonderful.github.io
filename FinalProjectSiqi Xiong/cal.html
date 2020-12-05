@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>GPA Calculator</title>
+        <link rel="stylesheet" href="home.css">
+        <script type="text/javascript">
+            function cal(){
+                var grade = new Array(5);
+                var credit = new Array(5);
+                var flag = 0;
+
+                for(var i = 0; i < 5; i++){
+                    var x =i + 1;
+                    var c1 = document.getElementById("r"+x+"_c"+1);
+                    var c2 = document.getElementById("r"+x+"_c"+2);
+                    var g = c1.options[c1.selectedIndex].value;
+                    var c = c2.value;
+                    console.log(g);
+                    console.log(c);
+                    if(g == -1 && !c){
+                        flag++;
+                        continue;
+                    }
+                    else if(g == -1 && c) {
+                        alert("Course " + eval(i+1) + " has invalid grade");
+                        return 0;
+                    }
+                    else if(g != -1 && !c) {
+                        alert("Course " + eval(i+1) + " has invalid credit");
+                        return 0;
+                    }
+                    else {
+                        grade[i] = g;
+                        credit[i] = c;
+                    }
+                }
+                
+                if(flag == 5) alert("Please add grade/credit you want to calculate!");
+                else {
+                    console.log("Start calculate");
+                    calculate(grade, credit); 
+                }
+     
+                return 0;
+            }
+            
+            function calculate(grade, credit){
+                var sumG =0; var sumC = 0;
+                var gpa = 0; var j = 0;
+                while(j < 5){
+                    if(!credit[j]) break;
+                    var gra = parseInt(grade[j],10);
+                    var cre = parseInt(credit[j],10);
+                    sumG += gra * cre;
+                    sumC += cre;
+                    console.log(sumG);
+                    console.log(sumC);
+                    j++;
+                }
+                console.log(sumG);
+                console.log(sumC);
+                gpa = sumG / sumC;
+                alert("Your GPA is " + eval(gpa));
+            }
+        
+        </script>
+    </head>
+    <body>
+        <div class="all">
+            <nav>
+                <div><a href="home.html"><img src="bg.png" id="homeImg"></a></div>
+                <div id="navul">
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="des.html">Program</a></li>
+                        <li><a href="app.html">Application</a></li>
+                        <li><a href="cal.html">GPA Calculator</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <main>
+                <form>
+                <table>
+                    <tr style="background-color: white">
+                        <th>Grade</th>
+                        <th>Credits</th>
+                    </tr>
+                    <tbody id="tbody" >
+                        <tr>
+                            <td>
+                                <select id="r1_c1" value="Please choose" required="required">
+                                    <option value="-1"> </option>
+                                    <option value="4">A</option>
+                                    <option value="3">B</option>
+                                    <option value="2">C</option>
+                                    <option value="1">D</option>
+                                    <option value="0">F</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" id="r1_c2" oninput="if(value>6)value=6; if(value<1)value=1" required="required" value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select id="r2_c1" value="Please choose" required="required">
+                                    <option value="-1"> </option>
+                                    <option value="4">A</option>
+                                    <option value="3">B</option>
+                                    <option value="2">C</option>
+                                    <option value="1">D</option>
+                                    <option value="0">F</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" id="r2_c2" oninput="if(value>6)value=6; if(value<1)value=1" required="required" value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select id="r3_c1" value="Please choose" required="required">
+                                    <option value="-1"> </option>
+                                    <option value="4">A</option>
+                                    <option value="3">B</option>
+                                    <option value="2">C</option>
+                                    <option value="1">D</option>
+                                    <option value="0">F</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" id="r3_c2" oninput="if(value>6)value=6; if(value<1)value=1" required="required" value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select id="r4_c1" value="Please choose" required="required">
+                                    <option value="-1"> </option>
+                                    <option value="4">A</option>
+                                    <option value="3">B</option>
+                                    <option value="2">C</option>
+                                    <option value="1">D</option>
+                                    <option value="0">F</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" id="r4_c2" oninput="if(value>6)value=6; if(value<1)value=1" required="required" value="">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select id="r5_c1" value="Please choose" required="required">
+                                    <option value="-1"> </option>
+                                    <option value="4">A</option>
+                                    <option value="3">B</option>
+                                    <option value="2">C</option>
+                                    <option value="1">D</option>
+                                    <option value="0">F</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" id="r5_c2" oninput="if(value>6)value=6; if(value<1)value=1" required="required" value="">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                </form>&nbsp;
+                <div>
+                    <button type="submit" onclick="cal()">Calculate</button>
+                </div>
+            </main>          
+            <footer>
+                Copyright &copy; CSCI 4970 Final Project<br>
+                <a href="mailto:sxiong@aum.edu">sxiong@aum.edu</a>
+            </footer>
+        </div>
+    </body>
+</html>

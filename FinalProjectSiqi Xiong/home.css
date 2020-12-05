@@ -1,0 +1,178 @@
+.all{
+    background-color:white;
+	margin-right:auto;
+	margin-left:auto;
+	width:80%;
+}
+
+nav{
+	line-height:100%;
+	font-weight:bold;
+    width:auto;
+    padding: 0.01em 1em 0.01em 1em;
+	margin-bottom: 0;
+}
+
+nav a{
+	text-decoration:none;
+    display: block;
+    padding: 0.2em 0.8em;
+    font-size: 1.1em;
+
+}
+
+nav a:link{color: lightslategrey;}
+nav a:hover{color: blue;}
+nav a:visited{color: black;}
+
+#homeImg{
+    float: left;
+    width:30%;
+}
+
+#navul{
+    float: right;
+
+}
+
+nav ul {
+    list-style-type: none;
+    font-size: 18px;
+}
+
+nav li{
+    display: inline-block;
+    margin: auto;
+    padding: 0;
+}
+
+.main{
+    margin-top: 100px;
+    margin-left: 50px;
+    float: none;
+}
+
+h1{
+	line-height:200%;
+}
+
+h2, h3{
+    font-family:'candara', sans-serif;
+}
+.desimg{
+    width:auto;
+    height:600px;
+}
+
+p{
+    font-family:'candara', sans-serif;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.highlight{
+    font-size: 25px;
+}
+
+#textlink{
+    color: red;
+    text-decoration: none;
+}
+
+#textlink:hover{color: crimson;}
+
+.mainul{
+    font-size: 18px;
+}
+
+table{
+    margin: auto;
+    width:100%;
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+td, th{
+    padding: 5px;
+    border: 1px solid rgba(86, 61, 124, .2);
+    text-align: center;
+}
+
+td select{
+    margin: auto;
+    width: 10em;
+}
+
+td input{
+    margin: auto;
+}
+
+tr:nth-of-type(odd) { background-color: aliceblue; }
+
+form{
+    margin: auto;
+}
+
+label{
+    float: left;
+	display:block;
+	width:13em;
+	padding-right:1em;
+}
+
+input{
+    display:block;
+	margin-bottom:1em;
+    width: 15em;
+}
+
+.rGroup{
+    display: block;
+}
+
+.rGroup input{
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    display: inline;
+    
+    border: 2px solid #999;
+    transition: 0.2s all linear;
+    outline: none;
+    margin-right: 10px;
+}
+
+.rGroup label{
+    float: none;
+    display: inline;
+
+}
+
+.rGroup input:checked {
+    border: 6px solid black;
+}
+
+button{
+    color: black;
+    font-size: 15px;
+    float: right;
+}
+
+button:hover,
+button:focus {
+  color: #999;
+}
+
+button:active {
+  background-color: white;
+  color: black;
+  outline: 1px solid black;
+}
+
+footer{
+    margin-top: 50px;
+	font-size:.70em;
+	font-family:italic;
+	text-align:center;
+	padding:1em;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Teaching Assistant Application</title>
+        <link rel="stylesheet" href="home.css">
+        
+    </head>
+    <body>
+        <div class="all">
+            <nav>
+                <div><a href="home.html"><img src="bg.png" id="homeImg"></a></div>
+                <div id="navul">
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="des.html">Program</a></li>
+                        <li><a href="app.html">Application</a></li>
+                        <li><a href="cal.html">GPA Calculator</a></li>
+                    </ul>
+                </div>
+            </nav>
+            <main>
+                <div class="main">
+                    <form method="post" action="https://webdevbasics.net/scripts/demo.php">
+                    <label><span style="color: red">*</span>First Name:</label>
+                    <input type="text" required="required">
+
+                    <label><span style="color: red">*</span>Last Name:</label>
+                    <input type="text" required="required">
+
+                    <label><span style="color: red">*</span>ID:</label>
+                    <input type="text" required="required" maxlength="9" placeholder="S00******">
+
+                    <label>Gender:</label>
+                    <div class="rGroup">
+                      <input type="radio" id="Female" name="gender" value="Female">
+                      <label for="Female">Female</label>
+
+                      <input type="radio" id="Male" name="gender" value="Male">
+                      <label for="Male">Male</label>
+
+                      <input type="radio" id="None" name="gender" value="None">
+                      <label for="None">Don't want to say</label>
+                    </div>
+                    
+                    <label>GPA:</label>
+                    <input type="number" placeholder="Range 0 - 4">
+
+                    <label>Submission Date:</label>
+                    <input type="text" id="date" value="" disabled="true">
+                                       
+                    <script type="text/JavaScript">
+                        var date = new Date();
+                        var year = date.getFullYear();  
+                        var month = date.getMonth() + 1;  
+                        month = month < 10 ? '0' + month : month;
+                        var day = date.getDate();  
+                        day = day < 10 ? ('0' + day) : day;
+                        var time = month+'/'+day+'/'+year;
+                        var but = document.getElementById("date");
+                        but.value = time.toString();
+                    </script>
+
+                    <label>Comments:</label>
+                    <textarea rows="5" cols="26" required="required"></textarea><br><br>
+
+                    <div><button type="submit">Submit</button></div>
+                </form>
+                </div>
+            </main>          
+            <footer>
+                Copyright &copy; CSCI 4970 Final Project<br>
+                <a href="mailto:sxiong@aum.edu">sxiong@aum.edu</a>
+            </footer>
+        </div>
+    </body>
+</html>
